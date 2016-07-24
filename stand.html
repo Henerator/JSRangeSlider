@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>Элемент выбора диапозона</title>
+
+	<link rel="stylesheet" href="style/rangeSliderStyle.css" />
+
+	<script type="text/javascript" src="script/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="script/rangeSlider.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".range_slider").each(function () {
+				var slider = $(this);							//	ищем слайдер
+				var r_slider = new RangeSlider(slider);			//	создаем для него программную обертку
+				$(r_slider).on('rangeChange', function(e) {		//	ставим обработчик события изменения диапозона
+					// log(e.text + ": " + "{min: " + e.rangeState.min + ", max: " + e.rangeState.max + "}");
+				});
+			});
+		});
+	</script>
+	
+</head>
+	<body>
+		<div class='range_slider' rangeMin='0' rangeMax='10' valueMin='0' valueMax='10' text='Multiple'></div>
+		<div class='range_slider' rangeMin='100' rangeMax='1000' valueMin='250' valueMax='860' text='Addition'></div>
+		<div class='range_slider' rangeMin='0' rangeMax='100' valueMin='50' valueMax='60' text='Subtraction'></div>
+		<div class='range_slider' rangeMin='1' rangeMax='100' valueMin='1' valueMax='100' text='Division'></div>
+	</body>
+</html>
+
+
